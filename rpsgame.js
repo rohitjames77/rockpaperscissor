@@ -1,30 +1,42 @@
  
 
- prompt("Rock Paper Scissors", );
-//console.log("hi "+ playerselection);
-let choices = ["rock", "paper","scissors"];
- function getComputerChoice(){
-return(choices[(Math.floor(Math.random()*choices.length))]);
-}
-let playerSelection = "rock";
-let computerSelection = getComputerChoice();
-function playRound(playerSelection,computerSelection){
-   if ( playerSelection === "paper" && computerSelection === "rock" || 
-        playerSelection === "rock" && computerSelection === "scissors" ||
-        playerSelection === "scissors"&& computerSelection ==="paper"
-   ){
-  console.log("win");
-   }
-   else if (playerSelection === "rock" && computerSelection === "paper" ||
-             playerSelection === "paper" && computerSelection === "scissors" ||
-             playerSelection === "scissors" && computerSelection === "rock"
-   ){
-console.log("lose");
-   }else if(playerSelection == computerSelection ){
-console.log("tie");
-}
+let input = ["rock","paper","scissors"];
+
+function getComputerChoice() {
+let choice = input[Math.floor(Math.random() * input.length)];
+return choice;
+ }
  
+
+function playRound(playerSelection,computerSelection){
+if (computerSelection == computerSelection){
+   return "tie"
 }
-playRound();
-playRound();
-playRound();
+else if (playerSelection == "rock" && computerSelection == "scissors" ||
+playerSelection == "scissors" && computerSelection == "paper" ||
+playerSelection == "paper" && computerSelection == "rock"){
+   return "player";
+
+}else{
+   return "computer";
+} 
+
+}
+function game (){
+   let result = playRound(playerSelection, computerSelection);
+   if (result == "tie"){
+      return "its a tie ";
+   }else if ( result == "player" ){
+      return "you Won ";
+
+     }else {
+      return "you Lose";
+     }
+     
+
+     
+
+}
+   let playerSelection = "rock";
+   let computerSelection = getComputerChoice();
+   console.log(playRound(playerSelection, computerSelection));
