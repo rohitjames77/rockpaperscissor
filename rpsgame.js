@@ -8,14 +8,15 @@ let computerSelection = input[Math.floor(Math.random() * input.length)];
 
 return computerSelection;
 }
-getComputerChoice();
+
 
 function playerInput(){
-   let playerSelection= prompt("Whats ur Choice , ROCK PAPER SCISSORS?",)
+   let playerSelection= prompt("Whats ur Choice , ROCK PAPER SCISSORS?",);
    return playerSelection;
 }
 
-playerInput();
+
+
 function playRound(playerSelection,computerSelection){
 if ( playerSelection == "rock" && computerSelection == "paper"){
    return "You Lose";
