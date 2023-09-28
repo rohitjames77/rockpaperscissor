@@ -1,42 +1,30 @@
  
 
-let input = ["rock","paper","scissors"];
+ let input = ["rock","paper","scissors"];
+
 
 function getComputerChoice() {
-let choice = input[Math.floor(Math.random() * input.length)];
-return choice;
- }
- 
+let computerSelection = input[Math.floor(Math.random() * input.length)];
 
+return computerSelection;
+}
+getComputerChoice();
+
+function playerInput(){
+   let playerSelection= prompt("Whats ur Choice , ROCK PAPER SCISSORS?",)
+   return playerSelection;
+}
+
+playerInput();
 function playRound(playerSelection,computerSelection){
-if (computerSelection == computerSelection){
-   return "tie"
+if ( playerSelection == "rock" && computerSelection == "paper"){
+   return "You Lose";
+} else {
+   return "you Win";
 }
-else if (playerSelection == "rock" && computerSelection == "scissors" ||
-playerSelection == "scissors" && computerSelection == "paper" ||
-playerSelection == "paper" && computerSelection == "rock"){
-   return "player";
-
-}else{
-   return "computer";
-} 
 
 }
-function game (){
-   let result = playRound(playerSelection, computerSelection);
-   if (result == "tie"){
-      return "its a tie ";
-   }else if ( result == "player" ){
-      return "you Won ";
-
-     }else {
-      return "you Lose";
-     }
-     
-
-     
-
-}
-   let playerSelection = "rock";
-   let computerSelection = getComputerChoice();
-   console.log(playRound(playerSelection, computerSelection));
+let computerSelection= getComputerChoice();
+let playerSelection = playerInput();
+console.log(playRound(playerSelection,computerSelection));
+   
