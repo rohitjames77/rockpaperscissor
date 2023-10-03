@@ -1,5 +1,5 @@
 
- let input = ["rock","paper","scissors"];
+ const input = ["rock","paper","scissors"];
 
 function getComputerChoice() {
 let computerSelection = input[Math.floor(Math.random() * input.length)];
@@ -11,10 +11,10 @@ return computerSelection;
 function playerInput(){
    let playerSelection= prompt("Whats ur Choice , ROCK PAPER SCISSORS?",);
    console.log(playerSelection);
-return playerSelection;
+return playerSelection.toLowerCase().trim();
 }
 let playerSelection= playerInput();
-computerSelection= getComputerChoice(); 
+let computerSelection= getComputerChoice(); 
 //console.log(playRound(playerSelection,computerSelection));
 
    
@@ -37,13 +37,20 @@ return `${playerSelection} & ${computerSelection} Its a tie `;
 
 }
 
-
 function game (){
 for (let i = 0 ;i < 5;i++) {
    let playerSelection= playerInput();
-   computerSelection= getComputerChoice(); 
+   let computerSelection= getComputerChoice(); 
    console.log(playRound(playerSelection,computerSelection));
 }
+let playerAuthFalse = false;
+let playerAuthTrue  = true;
+let playerNull = null;
+if (playerSelection == playerNull )
+return playerAuthFalse;
+else {
+   return playerAuthTrue;
 }
 
+}
 game();
