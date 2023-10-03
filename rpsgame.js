@@ -15,42 +15,59 @@ return playerSelection.toLowerCase().trim();
 }
 let playerSelection= playerInput();
 let computerSelection= getComputerChoice(); 
-//console.log(playRound(playerSelection,computerSelection));
+console.log(playRound(playerSelection,computerSelection));
 
    
 function playRound(playerSelection,computerSelection){
+
+let player = `You Win ${playerSelection} beats ${computerSelection} `;
+let computer = `You Lose! ${computerSelection} beats ${playerSelection}`;
+let tie = `${playerSelection} & ${computerSelection} Its a tie `;  
 if ( playerSelection == "rock" && computerSelection == "paper"){
-return `You Win ${playerSelection} beats ${computerSelection} `;
+return computer;
 }if(playerSelection == "paper" && computerSelection == "rock"){
-return `You Win! ${playerSelection} beats ${computerSelection}`;
+return player;
 }if (playerSelection == "scissors" && computerSelection == "rock"){
-return `You Lose! ${computerSelection} beats ${playerSelection}`;
+return computer;
 }if (playerSelection == "rock" && computerSelection == "scissors"){
-return `You Win! ${playerSelection} beats ${computerSelection}`;
+return player;
 }if (playerSelection == "paper" && computerSelection == "scissors"){
-return `You Lose! ${computerSelection} beats ${playerSelection}`;
+return computer;
 }if (playerSelection == "scissors" && computerSelection == "paper"){
-return`You Win! ${playerSelection} beats ${computerSelection}`;
+return player;
 }else {
-return `${playerSelection} & ${computerSelection} Its a tie `;
+return tie;
 }
 
 }
 
 function game (){
-for (let i = 0 ;i < 5;i++) {
+   for (let i = 0 ;i < 5; i++) {
    let playerSelection= playerInput();
    let computerSelection= getComputerChoice(); 
    console.log(playRound(playerSelection,computerSelection));
+ if (player> computer){
+console.log("player");
+ } else if (computer > player){
+   console.log('computer');
+ }else {
+   return tie;
+ }
+}   
 }
-let playerAuthFalse = false;
-let playerAuthTrue  = true;
-let playerNull = null;
-if (playerSelection == playerNull )
-return playerAuthFalse;
-else {
-   return playerAuthTrue;
-}
+// function highScore(){
+//    
+//    let player = `You Win ${playerSelection} beats ${computerSelection} `;
+//    let computer = `You Lose! ${computerSelection} beats ${playerSelection}`;
+//    if (player > computer){
+//       return playerScore++; 
+      
+//    }else if (computer> player){
+//       computerScore++;
+//    }else {
+//       gameTie++;
+   
 
-}
+
 game();
+
