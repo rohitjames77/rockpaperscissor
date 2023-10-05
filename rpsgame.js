@@ -10,24 +10,11 @@ return computerSelection;
 
 
 function playerInput(){
-let rightInput = false;
-let inputChoice = prompt("Whats ur Choice , ROCK PAPER SCISSORS?",);
-  while (rightInput = false){
-   inputChoice = prompt("Whats ur Choice , ROCK PAPER SCISSORS?",);
-  if (playerSelection == null){
-    continue;
-     }
-} 
-lowerInput = inputChoice.toLowerCase();
-if (input.includes(lowerInput)){
-   rightInput = true;
-  return lowerInput;
+let playerInput = prompt("Whats ur Choice , ROCK PAPER SCISSORS?",);   
+//console.log(playerInput);
+let lowerCaseInput =playerInput.toLowerCase().trim();
+return lowerCaseInput;  
 }
-
-}
-
-
-
 
 let playerSelection= playerInput();
    let computerSelection= getComputerChoice(); 
@@ -58,45 +45,36 @@ if (playerSelection == "scissors" && computerSelection == "paper"){
     console.log(`You Win ${playerSelection} beats ${computerSelection} `);
   return "player";
 }
-else {
+else if(playerSelection == computerSelection) {
+  console.log('its a tie');
    return "tie";
 }
 
 }
-playRound();
- 
 
 function game (){
-
-  let playerScore=0;
-  let computerScore =0;
+    let playerScore = "player" ;
+    let computerScore = "computer";
    for (let i = 0 ;i < 5; i++) {
    let playerSelection= playerInput();
    let computerSelection= getComputerChoice(); 
-   console.log(playRound(playerSelection,computerSelection));
-   if (playRound(playerSelection,computerScore)== "player"){
-    playerScore++ ;
-   }else if (playRound(playerSelection.computerSelection)=="computer"){
-    computerScore++ ; 
-  }
-   if (playerScore > computerScore) {
-    console.log("Player Win's the Game");
-   }
-   else if (playerScore < computerScore){
- console.log("Computer Win's the Game");
-  }
-   else {
-    console.log("We have a Tie"); 
-  
-  }
-
-   }
+   let roundScore= playRound(playerSelection,computerSelection);
+   if (roundScore == playerScore) {
+     let roundPlayer = playerScore++;
+     console.log(roundPlayer);  
+      }
+      else if ( roundScore == computerScore){
+        let roundComputer = computerScore++;
+       console.log(roundComputer);
+      
+      }
+  }   
   }
    game();
 
 
-
-
+   
+   
 
 
 
