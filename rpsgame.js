@@ -11,41 +11,40 @@ return computerSelection;
 function playerInput(){
    let playerSelection= prompt("Whats ur Choice , ROCK PAPER SCISSORS?",);
    //console.log(playerSelection);
-return playerSelection.toLowerCase().trim();
+return playerSelection;
 }
 
 
 let playerSelection= playerInput();
 let computerSelection= getComputerChoice(); 
-let checkWinner = (playerSelection, computerSelection);
+let scoreArr = [];
+let player = 0;
+let computer = 0 ;
+let tie = 0;
 function playRound(playerSelection,computerSelection){
 
-let player = 0;
-let computer = 0;
-let tie = 0; 
 if ( playerSelection == "rock" && computerSelection == "paper"){
 console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
-  return computer;
+  return scoreArr.push(computer);
 }if(playerSelection == "paper" && computerSelection == "rock"){
 console.log(`You Win ${playerSelection} beats ${computerSelection} `);
-  return player;
+  return scoreArr.push(player);
 }if (playerSelection == "scissors" && computerSelection == "rock"){
 console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
-  return computer;
+  return scoreArr.push(computer) ;
 }if (playerSelection == "rock" && computerSelection == "scissors"){
 console.log(`You Win ${playerSelection} beats ${computerSelection} `);
-  return player;
+  return scoreArr.push(player) ;
 }if (playerSelection == "paper" && computerSelection == "scissors"){
 console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
-  return computer;
+  return scoreArr.push(computer) ;
 }if (playerSelection == "scissors" && computerSelection == "paper"){
 console.log(`You Win ${playerSelection} beats ${computerSelection} `);
-  return player;
-}else {
-  console.log("its a Tie");
-return tie;
+  return scoreArr.push(computer) ;
+}else{
+  console.log("its a tie");
+  return scoreArr.push(tie);
 }
-
 
 }
 
@@ -55,14 +54,11 @@ function game (){
    let playerSelection= playerInput();
    let computerSelection= getComputerChoice(); 
    console.log(playRound(playerSelection,computerSelection));
-   if (checkWinner(playerSelection,computerSelection)== player){
-       player++;
-  }
-  else if (checkWinner(playerSelection,computerSelection)== computer){
- computer++;
-   }  else {
-    tie++;
+   if (playerSelection == null){
+    continue;
    }
-}
-}
-game();
+  
+   }
+  }
+   game();
+
