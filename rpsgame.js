@@ -58,34 +58,44 @@ if (roundResult == "computer"){
 
 }
 
-function game (){
-    let playerScore= 1;
-   let computerScore =1;
-  for (let i = 0 ;i < 5; i++) {
-   let playerSelection= playerInput();
-   let computerSelection= getComputerChoice();
-   console.log(roundWinner(playerSelection,computerSelection)); 
-  if(playRound(playerSelection,computerSelection)== "player"){
-    console.log(`"Player Score" ${playerScore++}`);
-  }
-  else if (playRound(playerSelection,computerSelection)=="computer"){
-   console.log(`"Computer Score" ${computerScore++}`);
-  }
-  }
-if (playerScore > computerScore){
-  console.log("Player Win The Game");
-}
-else if (computerScore > playerScore){
-  console.log("Computer Won The Game");
-}
-console.log("Game Over");
-  }   
+// function game (){
+//     let playerScore= 1;
+//    let computerScore =1;
+//   for (let i = 0 ;i < 5; i++) {
+//    let playerSelection= playerInput();
+//    let computerSelection= getComputerChoice();
+//    console.log(roundWinner(playerSelection,computerSelection)); 
+//   if(playRound(playerSelection,computerSelection)== "player"){
+//     console.log(`"Player Score" ${playerScore++}`);
+//   }
+//   else if (playRound(playerSelection,computerSelection)=="computer"){
+//    console.log(`"Computer Score" ${computerScore++}`);
+//   }
+//   }
+// if (playerScore > computerScore){
+//   console.log("Player Win The Game");
+// }
+// else if (computerScore > playerScore){
+//   console.log("Computer Won The Game");
+// }
+// console.log("Game Over");
+//   }   
   
-  game();
- 
-
-
-
+//   game();
+const body = document.querySelector('body');
+console.log(body); 
+const btnDiv = document.createElement('div');
+const rockBtn = document.createElement('button');
+const paperBtn = document.createElement('button');
+const scissorBtn = document.createElement('button');
+btnDiv.appendChild(rockBtn);
+btnDiv.appendChild(paperBtn);
+btnDiv.appendChild(scissorBtn);
+body.appendChild(btnDiv);
+btnDiv.classList.add('btnDiv');
+rockBtn.textContent = 'ROCK';
+paperBtn.textContent = 'PAPER';
+scissorBtn.textContent = 'SCISSOR';
 
 
 
