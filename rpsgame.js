@@ -5,6 +5,7 @@ const btnDiv = document.createElement('div');
 const rockBtn = document.createElement('button');
 const paperBtn = document.createElement('button');
 const scissorBtn = document.createElement('button');
+const outerHtmlDiv = document.documentElement.outerHTML;
 btnDiv.appendChild(rockBtn);
 btnDiv.appendChild(paperBtn);
 btnDiv.appendChild(scissorBtn);
@@ -34,8 +35,11 @@ const playerScore = document.createElement('p');
 const computerScore = document.createElement('p');
 divResult.append(playerScore);
 divResult.append(computerScore);
-playerScore.textContent = '';
-computerScore.textContent= '';
+playerScore.textContent = '0';
+computerScore.textContent= '0';
+resultHead.classList= 'roundResult';
+playerScore.classList = 'player';
+computerScore.classList= 'computer';
 
 
 
@@ -52,18 +56,18 @@ computerScore.textContent= '';
 
 
 
-
-
+//GAME LOGIC....................................................................
 
 let btns = document.querySelectorAll('button');
 let playerCall;
-btns.forEach(function (i){
+btns.forEach(function btnLoop (i){
     i.addEventListener('click', function playerInput() {     
 let playerCall = i.value;
  console.log(playerCall);
-
-    }
+ playRound()
+}
 )})
+    
 
 function getComputerChoice() {
 const input = ["rock","paper","scissors"];
@@ -72,38 +76,45 @@ console.log(computerInput);
 return computerInput;
 }
 
+let playerSelection = btnLoop();
+console.log(playerSelection);
 
+function playRound(playerSelection, computerSelection){
 
-
-function playRound(){
-    let playerSelection = playerCall;
-    let computerSelection = getComputerChoice();
        
         if ( playerSelection == "rock" && computerSelection == "paper"){
-          
+        resultHead.textContent = `${computerSelection} beats ${playerSelection}`;
+         computerScore.textContent += 1; 
+            
         }
          else if(playerSelection == "paper" && computerSelection == "rock"){
-          
+            resultHead.textContent = `${playerSelection} beats ${computerSelection}`;
+            playerScore.textContent += 1; 
         }
        else  if (playerSelection == "scissors" && computerSelection == "rock"){
-          
+        resultHead.textContent = `${computerSelection} beats ${playerSelection}`;
+        computerScore.textContent += 1; 
         }
        else  if (playerSelection == "rock" && computerSelection == "scissors"){
-          
+        resultHead.textContent = `${playerSelection} beats ${computerSelection}`;
+        playerScore.textContent += 1; 
         }
         else if (playerSelection == "paper" && computerSelection == "scissors"){
-        
+            resultHead.textContent = `${computerSelection} beats ${playerSelection}`;
+            computerScore.textContent += 1; 
         }
       else if (playerSelection == "scissors" && computerSelection == "paper"){
-          
+        resultHead.textContent = `${playerSelection} beats ${computerSelection}`;
+        playerScore.textContent += 1; 
         }
         else if(playerSelection == computerSelection) {
-    
+            resultHead.textContent = `${computerSelection} Equals ${playerSelection} Its a Tie` ;
+            
         }
         
         }
         
-playRound()
+
 
 
 
