@@ -17,44 +17,50 @@ scissorBtn.textContent = 'SCISSOR';
 rockBtn.value = 'rock';
 paperBtn.value = 'paper';
 scissorBtn.value = 'scissor';
+const divResult = document.createElement('div');
+body.appendChild(divResult);
+
+divResult.classList = 'result';
+divResult.value = 'result';
 
 let btns = document.querySelectorAll('button');
 
 btns.forEach(function (i){
-    i.addEventListener('click', function playerInput() {     
-let playerSelection = i.value;
- console.log(playerSelection);
- return playerSelection;
-    })
+    i.addEventListener('click',playerInput)
+    
 })
+    function playerInput() {     
+let playerCall = i.value;
+ console.log(playerCall);
+ return playerCall;
+    }
 
 function getComputerChoice() {
 const input = ["rock","paper","scissors"];
-let computerSelection = input[Math.floor(Math.random() * input.length)];
-console.log(computerSelection);
-return computerSelection;
+let computerInput = input[Math.floor(Math.random() * input.length)];
+console.log(computerInput);
+return computerInput;
 }
 
-function playRound(playerSelection,computerSelection){
-if (playerSelection == 'rock' && computerSelection == 'paper'){
-    console.log( "you Win");
-    
-}else if (playerSelection == 'rock' && computerSelection == 'scissor'){
-    console.log('you lose');
 
-} else if (playerSelection == 'paper' && computerSelection == 'rock'){
-    console.log('you win');
-}else if ( playerSelection == 'paper' && computerSelection == 'scissor'){
-    console.log( 'you lose');
-}else if (playerSelection == 'scissor' && computerSelection == 'rock'){
-    console.log('you lose');
-   
-} else if (playerSelection == 'scissor' && computerSelection == 'paper'){
-    console.log('you win');
 
+
+function playRound(){
+    let playerSelection = playerInput()
+    let computerSelection = getComputerChoice();
+if ( computerSelection == "rock" && playerSelection == 'paper' ){
+    console.log( 'its rock');
+}else if (computerSelection == 'paper'){
+    console.log('its paper');
+}else if (computerSelection == 'scissors'){
+    console.log('its scissors');
 }
 }
+
+
+
 playRound();
+
 
 
 
