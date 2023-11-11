@@ -1,3 +1,5 @@
+
+// DIV FOR PLAYER INPUT & THREE INPUT BUTTONS.............
 const body = document.querySelector('body');
 const btnDiv = document.createElement('div');
 const rockBtn = document.createElement('button');
@@ -17,23 +19,51 @@ scissorBtn.textContent = 'SCISSOR';
 rockBtn.value = 'rock';
 paperBtn.value = 'paper';
 scissorBtn.value = 'scissor';
-const divResult = document.createElement('div');
-body.appendChild(divResult);
+document.body.style.backgroundColor = 'yellow';
 
+
+// DIV FOR RESULT AND ROUND SCORE............. 
+const divResult = document.createElement('div');
 divResult.classList = 'result';
 divResult.value = 'result';
+body.append(divResult);
+const resultHead = document.createElement('h1');
+divResult.append(resultHead);
+resultHead.textContent='';
+const playerScore = document.createElement('p');
+const computerScore = document.createElement('p');
+divResult.append(playerScore);
+divResult.append(computerScore);
+playerScore.textContent = '';
+computerScore.textContent= '';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 let btns = document.querySelectorAll('button');
-
+let playerCall;
 btns.forEach(function (i){
-    i.addEventListener('click',playerInput)
-    
-})
-    function playerInput() {     
+    i.addEventListener('click', function playerInput() {     
 let playerCall = i.value;
  console.log(playerCall);
- return playerCall;
+
     }
+)})
 
 function getComputerChoice() {
 const input = ["rock","paper","scissors"];
@@ -46,20 +76,36 @@ return computerInput;
 
 
 function playRound(){
-    let playerSelection = playerInput()
+    let playerSelection = playerCall;
     let computerSelection = getComputerChoice();
-if ( computerSelection == "rock" && playerSelection == 'paper' ){
-    console.log( 'its rock');
-}else if (computerSelection == 'paper'){
-    console.log('its paper');
-}else if (computerSelection == 'scissors'){
-    console.log('its scissors');
-}
-}
+       
+        if ( playerSelection == "rock" && computerSelection == "paper"){
+          
+        }
+         else if(playerSelection == "paper" && computerSelection == "rock"){
+          
+        }
+       else  if (playerSelection == "scissors" && computerSelection == "rock"){
+          
+        }
+       else  if (playerSelection == "rock" && computerSelection == "scissors"){
+          
+        }
+        else if (playerSelection == "paper" && computerSelection == "scissors"){
+        
+        }
+      else if (playerSelection == "scissors" && computerSelection == "paper"){
+          
+        }
+        else if(playerSelection == computerSelection) {
+    
+        }
+        
+        }
+        
+playRound()
 
 
-
-playRound();
 
 
 
