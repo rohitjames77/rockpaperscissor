@@ -18,6 +18,7 @@ rockBtn.textContent = 'ROCK';
 paperBtn.textContent = 'PAPER';
 scissorBtn.textContent = 'SCISSOR';
 rockBtn.value = 'rock';
+console.log(rockBtn.value);
 paperBtn.value = 'paper';
 scissorBtn.value = 'scissor';
 document.body.style.backgroundColor = 'yellow';
@@ -64,23 +65,25 @@ btns.forEach(function btnLoop (i){
     i.addEventListener('click', function playerInput() {     
 let playerCall = i.value;
  console.log(playerCall);
- playRound()
-}
+let playerSelection = playerCall;
+ return playerSelection;
+},
 )})
-    
-
-function getComputerChoice() {
+btns.forEach(function btnLoop (i){
+    i.addEventListener('click',function getComputerChoice() {
 const input = ["rock","paper","scissors"];
 let computerInput = input[Math.floor(Math.random() * input.length)];
 console.log(computerInput);
-return computerInput;
-}
+let computerSelection = computerInput;
+return computerSelection;
+// let computerSelection = computerInput
+// return computerSelection;
+})})
 
-let playerSelection = btnLoop();
-console.log(playerSelection);
 
-function playRound(playerSelection, computerSelection){
-
+btns.forEach(function btnLoop (i){
+    i.addEventListener('click',function playRound(playerSelection,computerSelection){
+    
        
         if ( playerSelection == "rock" && computerSelection == "paper"){
         resultHead.textContent = `${computerSelection} beats ${playerSelection}`;
@@ -113,6 +116,7 @@ function playRound(playerSelection, computerSelection){
         }
         
         }
+    )})
         
 
 
