@@ -11,14 +11,13 @@ btnDiv.appendChild(paperBtn);
 btnDiv.appendChild(scissorBtn);
 body.appendChild(btnDiv);
 btnDiv.classList.add('btnDiv');
-rockBtn.classList.add('rock');
-paperBtn.classList.add('paper');
-scissorBtn.classList.add('scissor');
+rockBtn.classList.add('button');
+paperBtn.classList.add('button');
+scissorBtn.classList.add('button');
 rockBtn.textContent = 'ROCK';
 paperBtn.textContent = 'PAPER';
 scissorBtn.textContent = 'SCISSOR';
 rockBtn.value = 'rock';
-console.log(rockBtn.value);
 paperBtn.value = 'paper';
 scissorBtn.value = 'scissor';
 document.body.style.backgroundColor = 'yellow';
@@ -58,68 +57,100 @@ computerScore.classList= 'computer';
 
 
 //GAME LOGIC....................................................................
-
-let btns = document.querySelectorAll('button');
-let playerCall;
-btns.forEach(function btnLoop (i){
-    i.addEventListener('click', function playerInput() {     
-let playerCall = i.value;
- console.log(playerCall);
-let playerSelection = playerCall;
- return playerSelection;
-},
-)})
-btns.forEach(function btnLoop (i){
-    i.addEventListener('click',function getComputerChoice() {
-const input = ["rock","paper","scissors"];
-let computerInput = input[Math.floor(Math.random() * input.length)];
-console.log(computerInput);
-let computerSelection = computerInput;
-return computerSelection;
-// let computerSelection = computerInput
-// return computerSelection;
-})})
+let playerSelection = '';
+function playerInput (){
+let parentDiv = document.querySelector('.btnDiv');
+parentDiv.addEventListener('click',function(event){
+  if (event.target && event.target.matches('.button') ){
+let playerSelection = event.target.value;
+console.log(playerSelection);
+return playerSelection;
+}
+})
+}
+function playRound(playerSelection){
+  console.log(playerSelection);
+}
+playRound();
 
 
-btns.forEach(function btnLoop (i){
-    i.addEventListener('click',function playRound(playerSelection,computerSelection){
+// if (playerSelection == "rock"){
+//   console.log( "Its Rock");
+// }else if (playerSelection == "paper"){
+//   console.log("Its Paper");
+
+// }else if (playerSelection == "scissor"){
+//   console.log("Its Scissor");
+
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let btns = document.querySelectorAll('.button');
+// btns.forEach(function btnLoop (i){
+//     i.addEventListener('click', function playerInput() {     
+// let playerCall = i.value;
+//  console.log(playerCall);
+// return playerCall; 
+// let playerSelection = playerinput();
+// }
+// getComputerChoice()
+// )})
+
+// function getComputerChoice() {
+//     const input = ["rock","paper","scissors"];
+//     let computerSelection = input[Math.floor(Math.random() * input.length)];
+//     console.log(computerSelection);
+//     return computerSelection;
+//     }
+
+
+
+
+//       function playRound(playerSelection,computerSelection){
     
-       
-        if ( playerSelection == "rock" && computerSelection == "paper"){
-        resultHead.textContent = `${computerSelection} beats ${playerSelection}`;
-         computerScore.textContent += 1; 
+//         if ( playerSelection == "rock" && computerSelection == "paper"){
+//         resultHead.textContent = `${computerSelection} beats ${playerSelection}`;
+//          computerScore.textContent += 1; 
             
-        }
-         else if(playerSelection == "paper" && computerSelection == "rock"){
-            resultHead.textContent = `${playerSelection} beats ${computerSelection}`;
-            playerScore.textContent += 1; 
-        }
-       else  if (playerSelection == "scissors" && computerSelection == "rock"){
-        resultHead.textContent = `${computerSelection} beats ${playerSelection}`;
-        computerScore.textContent += 1; 
-        }
-       else  if (playerSelection == "rock" && computerSelection == "scissors"){
-        resultHead.textContent = `${playerSelection} beats ${computerSelection}`;
-        playerScore.textContent += 1; 
-        }
-        else if (playerSelection == "paper" && computerSelection == "scissors"){
-            resultHead.textContent = `${computerSelection} beats ${playerSelection}`;
-            computerScore.textContent += 1; 
-        }
-      else if (playerSelection == "scissors" && computerSelection == "paper"){
-        resultHead.textContent = `${playerSelection} beats ${computerSelection}`;
-        playerScore.textContent += 1; 
-        }
-        else if(playerSelection == computerSelection) {
-            resultHead.textContent = `${computerSelection} Equals ${playerSelection} Its a Tie` ;
+//         }
+//          else if(playerSelection == "paper" && computerSelection == "rock"){
+//             resultHead.textContent = `${playerSelection} beats ${computerSelection}`;
+//             playerScore.textContent += 1; 
+//         }
+//        else  if (playerSelection == "scissor" && computerSelection == "rock"){
+//         resultHead.textContent = `${computerSelection} beats ${playerSelection}`;
+//         computerScore.textContent += 1; 
+//         }
+//        else  if (playerSelection == "rock" && computerSelection == "scissors"){
+//         resultHead.textContent = `${playerSelection} beats ${computerSelection}`;
+//         playerScore.textContent += 1; 
+//         }
+//         else if (playerSelection == "paper" && computerSelection == "scissors"){
+//             resultHead.textContent = `${computerSelection} beats ${playerSelection}`;
+//             computerScore.textContent += 1; 
+//         }
+//       else if (playerSelection == "scissors" && computerSelection == "paper"){
+//         resultHead.textContent = `${playerSelection} beats ${computerSelection}`;
+//         playerScore.textContent += 1; 
+//         }
+//         else if(playerSelection == computerSelection) {
+//             resultHead.textContent = `${computerSelection} Equals ${playerSelection} Its a Tie` ;
             
-        }
+//         }
         
-        }
-    )})
-        
-
-
+//         }
 
 
 
