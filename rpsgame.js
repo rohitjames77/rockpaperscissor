@@ -41,127 +41,63 @@ resultHead.classList= 'roundResult';
 playerScore.classList = 'player';
 computerScore.classList= 'computer';
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //GAME LOGIC....................................................................
-let playerSelection = '';
-function playerInput (){
+// let parentDiv = document.querySelector('.btnDiv');
+// parentDiv.addEventListener('click', function(event) {
+//   if (event.target && event.target.matches('.button')) {
+//      let playerSelection = event.target.value;
+//         console.log(playerSelection);
+//     // You can perform other actions with playerSelection here
+//   }
+// });
+
+
 let parentDiv = document.querySelector('.btnDiv');
-parentDiv.addEventListener('click',function(event){
-  if (event.target && event.target.matches('.button') ){
+parentDiv.addEventListener('click',function playRound(event){
+  if (event.target && event.target.matches('.button')) {
+    console.log(event.target.value);
+}    
 let playerSelection = event.target.value;
-console.log(playerSelection);
-return playerSelection;
-}
-})
-}
-function playRound(playerSelection){
-  console.log(playerSelection);
-}
-playRound();
-
-
-// if (playerSelection == "rock"){
-//   console.log( "Its Rock");
-// }else if (playerSelection == "paper"){
-//   console.log("Its Paper");
-
-// }else if (playerSelection == "scissor"){
-//   console.log("Its Scissor");
-
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let btns = document.querySelectorAll('.button');
-// btns.forEach(function btnLoop (i){
-//     i.addEventListener('click', function playerInput() {     
-// let playerCall = i.value;
-//  console.log(playerCall);
-// return playerCall; 
-// let playerSelection = playerinput();
-// }
-// getComputerChoice()
-// )})
-
-// function getComputerChoice() {
-//     const input = ["rock","paper","scissors"];
-//     let computerSelection = input[Math.floor(Math.random() * input.length)];
-//     console.log(computerSelection);
-//     return computerSelection;
-//     }
-
-
-
-
-//       function playRound(playerSelection,computerSelection){
-    
-//         if ( playerSelection == "rock" && computerSelection == "paper"){
-//         resultHead.textContent = `${computerSelection} beats ${playerSelection}`;
-//          computerScore.textContent += 1; 
-            
-//         }
-//          else if(playerSelection == "paper" && computerSelection == "rock"){
-//             resultHead.textContent = `${playerSelection} beats ${computerSelection}`;
-//             playerScore.textContent += 1; 
-//         }
-//        else  if (playerSelection == "scissor" && computerSelection == "rock"){
-//         resultHead.textContent = `${computerSelection} beats ${playerSelection}`;
-//         computerScore.textContent += 1; 
-//         }
-//        else  if (playerSelection == "rock" && computerSelection == "scissors"){
-//         resultHead.textContent = `${playerSelection} beats ${computerSelection}`;
-//         playerScore.textContent += 1; 
-//         }
-//         else if (playerSelection == "paper" && computerSelection == "scissors"){
-//             resultHead.textContent = `${computerSelection} beats ${playerSelection}`;
-//             computerScore.textContent += 1; 
-//         }
-//       else if (playerSelection == "scissors" && computerSelection == "paper"){
-//         resultHead.textContent = `${playerSelection} beats ${computerSelection}`;
-//         playerScore.textContent += 1; 
-//         }
-//         else if(playerSelection == computerSelection) {
-//             resultHead.textContent = `${computerSelection} Equals ${playerSelection} Its a Tie` ;
-            
-//         }
-        
-//         }
-
-
-
-
-
-
-
-
-
-
- 
+let computerSelection = getComputerChoice();
+          if ( playerSelection == "rock" && computerSelection == "paper"){
+          resultHead.textContent = `${computerSelection} beats ${playerSelection}`;
+           computerScore.textContent += 1; 
+              
+          }
+           else if(playerSelection == "paper" && computerSelection == "rock"){
+              resultHead.textContent = `${playerSelection} beats ${computerSelection}`;
+              playerScore.textContent += 1; 
+          }
+         else  if (playerSelection == "scissor" && computerSelection == "rock"){
+          resultHead.textContent = `${computerSelection} beats ${playerSelection}`;
+          computerScore.textContent += 1; 
+          }
+         else  if (playerSelection == "rock" && computerSelection == "scissors"){
+          resultHead.textContent = `${playerSelection} beats ${computerSelection}`;
+          playerScore.textContent += 1; 
+          }
+          else if (playerSelection == "paper" && computerSelection == "scissors"){
+              resultHead.textContent = `${computerSelection} beats ${playerSelection}`;
+              computerScore.textContent += 1; 
+          }
+        else if (playerSelection == "scissors" && computerSelection == "paper"){
+          resultHead.textContent = `${playerSelection} beats ${computerSelection}`;
+          playerScore.textContent += 1; 
+          }
+          else if(playerSelection == computerSelection) {
+              resultHead.textContent = `${computerSelection} Equals ${playerSelection} Its a Tie` ;
+              
+          }
+          
+          }
   
 
- 
+)
+
+const input = ["rock","paper","scissors"];
+
+function getComputerChoice() {
+let computerInput = input[Math.floor(Math.random() * input.length)];
+console.log(computerInput);
+return computerInput;
+}
