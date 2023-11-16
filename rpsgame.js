@@ -33,23 +33,27 @@ divResult.append(resultHead);
 resultHead.textContent='';
 const playerScore = document.createElement('p');
 const computerScore = document.createElement('p');
+const computerScoreHead = document.createElement('h1');
+const playerScoreHead = document.createElement('h1');
+const finalResult = document.createElement('p');
 divResult.append(playerScore);
 divResult.append(computerScore);
-playerScore.textContent = '0';
-computerScore.textContent= '0';
+divResult.append(computerScoreHead);
+divResult.append(playerScoreHead);
+divResult.append(finalResult);
+playerScore.innerText = 0;
+computerScore.innerText= 0;
+playerScoreHead.textContent = 'Player Score';
+computerScoreHead.textContent= 'Computer Score';
+finalResult.textContent = '';
 resultHead.classList= 'roundResult';
 playerScore.classList = 'player';
-computerScore.classList= 'computer';
+computerScore.classList = 'computer';
+finalResult.classList = 'final-result';
+
+
 
 //GAME LOGIC....................................................................
-// let parentDiv = document.querySelector('.btnDiv');
-// parentDiv.addEventListener('click', function(event) {
-//   if (event.target && event.target.matches('.button')) {
-//      let playerSelection = event.target.value;
-//         console.log(playerSelection);
-//     // You can perform other actions with playerSelection here
-//   }
-// });
 
 
 let parentDiv = document.querySelector('.btnDiv');
@@ -59,35 +63,38 @@ parentDiv.addEventListener('click',function playRound(event){
 }    
 let playerSelection = event.target.value;
 let computerSelection = getComputerChoice();
+
           if ( playerSelection == "rock" && computerSelection == "paper"){
           resultHead.textContent = `${computerSelection} beats ${playerSelection}`;
-           computerScore.textContent += 1; 
+           computerScore.innerText++; 
               
           }
            else if(playerSelection == "paper" && computerSelection == "rock"){
               resultHead.textContent = `${playerSelection} beats ${computerSelection}`;
-              playerScore.textContent += 1; 
+              playerScore.innerText++; 
           }
          else  if (playerSelection == "scissor" && computerSelection == "rock"){
-          resultHead.textContent = `${computerSelection} beats ${playerSelection}`;
-          computerScore.textContent += 1; 
+          resultHead.textContent = `${computerSelection} beats ${playerSelection} `;
+          computerScore.innerText++; 
           }
          else  if (playerSelection == "rock" && computerSelection == "scissors"){
-          resultHead.textContent = `${playerSelection} beats ${computerSelection}`;
-          playerScore.textContent += 1; 
+          resultHead.textContent = `${playerSelection} beats ${computerSelection}\n `;
+          playerScore.innerText++; 
           }
           else if (playerSelection == "paper" && computerSelection == "scissors"){
               resultHead.textContent = `${computerSelection} beats ${playerSelection}`;
-              computerScore.textContent += 1; 
+              computerScore.innerText++; 
           }
         else if (playerSelection == "scissors" && computerSelection == "paper"){
           resultHead.textContent = `${playerSelection} beats ${computerSelection}`;
-          playerScore.textContent += 1; 
+          playerScore.innerText++; 
           }
           else if(playerSelection == computerSelection) {
               resultHead.textContent = `${computerSelection} Equals ${playerSelection} Its a Tie` ;
               
           }
+
+         
           
           }
   
@@ -101,3 +108,14 @@ let computerInput = input[Math.floor(Math.random() * input.length)];
 console.log(computerInput);
 return computerInput;
 }
+
+function FinalRoundResult(){
+console.log(playerScore);
+console.log(computerScore);
+  if(playerScore.innerText == 5){
+    finalResult.textContent = 'PLAYER WIN THE GAME';
+  }else if (computerScore.innerText == 5){
+    console.log(finalResult.textContent = 'COMPUTER WIN THE GAME');
+  }
+}
+FinalRoundResult()
