@@ -58,9 +58,13 @@ resultHead.classList= 'roundResult';
 playerScore.classList = 'player';
 computerScore.classList = 'computer';
 finalResult.classList = 'final-result';
-
-
-
+body.insertBefore(divResult, body.children[1]);
+playerScoreHead.classList= 'pScore';
+computerScoreHead.classList= 'compScore';
+document.getElementsByClassName('result')
+divResult.insertBefore(playerScoreHead,divResult.children[1]);
+divResult.insertBefore(computerScoreHead,divResult.children[3]);
+divResult.insertBefore(finalResult,divResult.children[0]);
 //GAME LOGIC....................................................................
 
 
