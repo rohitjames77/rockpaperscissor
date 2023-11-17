@@ -14,12 +14,15 @@ btnDiv.classList.add('btnDiv');
 rockBtn.classList.add('button');
 paperBtn.classList.add('button');
 scissorBtn.classList.add('button');
-rockBtn.textContent = 'ROCK';
+const rockImg = document.createElement('img');
+rockImg.src = 'https://www.pngaaa.com/download/3313783';
+rockBtn.textContent = '';
 paperBtn.textContent = 'PAPER';
 scissorBtn.textContent = 'SCISSOR';
 rockBtn.value = 'rock';
 paperBtn.value = 'paper';
 scissorBtn.value = 'scissor';
+//images ..............................
 
 
 
