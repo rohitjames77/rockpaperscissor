@@ -20,7 +20,12 @@ scissorBtn.textContent = 'SCISSOR';
 rockBtn.value = 'rock';
 paperBtn.value = 'paper';
 scissorBtn.value = 'scissor';
-document.body.style.backgroundColor = 'yellow';
+
+
+
+
+
+
 
 
 // DIV FOR RESULT AND ROUND SCORE............. 
@@ -93,7 +98,8 @@ let computerSelection = getComputerChoice();
               resultHead.textContent = `${computerSelection} Equals ${playerSelection} Its a Tie` ;
               
           }
-
+            
+          FinalRoundResult()
          
           
           }
@@ -118,4 +124,3 @@ console.log(computerScore);
     console.log(finalResult.textContent = 'COMPUTER WIN THE GAME');
   }
 }
-FinalRoundResult()
