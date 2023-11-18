@@ -16,7 +16,7 @@ paperBtn.classList.add('button');
 scissorBtn.classList.add('button');
 const rockImg = document.createElement('img');
 rockImg.src = 'https://www.pngaaa.com/download/3313783';
-rockBtn.textContent = '';
+rockBtn.textContent = 'ROCK';
 paperBtn.textContent = 'PAPER';
 scissorBtn.textContent = 'SCISSOR';
 rockBtn.value = 'rock';
